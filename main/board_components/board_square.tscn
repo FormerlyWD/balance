@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://2au1xbqadq5g"]
+
+[ext_resource type="Texture2D" uid="uid://7vbbb2egnt0t" path="res://art_folder/board/Sprite-0003.png" id="1_ckxir"]
+
+[node name="board_square" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="square_sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ckxir")

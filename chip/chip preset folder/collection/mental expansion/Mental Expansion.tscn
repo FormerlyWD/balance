@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://blu235h80ckgi"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/mental expansion/mental_expansion.gd" id="1_ux6ek"]
+[ext_resource type="Texture2D" uid="uid://dn4sv80bwp38s" path="res://art_folder/chips/logos/Sprite-0005.png" id="2_42x33"]
+
+[node name="Mental Expansion" type="Node2D"]
+script = ExtResource("1_ux6ek")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_42x33")

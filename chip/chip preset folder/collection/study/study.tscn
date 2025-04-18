@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://corff2s4g4qv3"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/study/study.gd" id="1_l72u8"]
+[ext_resource type="Texture2D" uid="uid://bbhqs10hvkxu0" path="res://art_folder/chips/logos/book.png" id="2_y2tuy"]
+
+[node name="Study" type="Node2D"]
+script = ExtResource("1_l72u8")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_y2tuy")

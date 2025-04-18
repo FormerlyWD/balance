@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://2au1xbqadq5g"]
+[gd_scene load_steps=4 format=3 uid="uid://2au1xbqadq5g"]
 
 [ext_resource type="Texture2D" uid="uid://7vbbb2egnt0t" path="res://art_folder/board/Sprite-0003.png" id="1_ckxir"]
+[ext_resource type="Script" path="res://main/board_components/sqr_select.gd" id="2_bctpr"]
 
-[node name="board_square" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7i0n"]
+size = Vector2(15.5, 15.5)
+
+[node name="board_square_1" type="Node2D"]
 scale = Vector2(2, 2)
 
 [node name="square_sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_ckxir")
+
+[node name="sqr_select" type="Area2D" parent="."]
+script = ExtResource("2_bctpr")
+
+[node name="select_area" type="CollisionShape2D" parent="sqr_select"]
+shape = SubResource("RectangleShape2D_m7i0n")
+
+[connection signal="mouse_entered" from="sqr_select" to="sqr_select" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="sqr_select" to="sqr_select" method="_on_mouse_exited"]

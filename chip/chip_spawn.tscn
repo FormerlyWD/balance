@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs03vq7g3jqir"]
+
+[ext_resource type="Script" path="res://chip/chip_spawn.gd" id="1_dsn7o"]
+
+[node name="chip_spawn" type="Node2D"]
+script = ExtResource("1_dsn7o")

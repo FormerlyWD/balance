@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://oxmm4afsgkya"]
+
+[ext_resource type="Script" path="res://chip/chip_presets.gd" id="1_h40wb"]
+[ext_resource type="PackedScene" uid="uid://ig8domqvsqu1" path="res://chip/chip preset folder/unordered_chip.tscn" id="2_55ho3"]
+[ext_resource type="PackedScene" uid="uid://corff2s4g4qv3" path="res://chip/chip preset folder/collection/study/study.tscn" id="3_p6iju"]
+[ext_resource type="PackedScene" uid="uid://blu235h80ckgi" path="res://chip/chip preset folder/collection/mental expansion/Mental Expansion.tscn" id="4_psl5y"]
+
+[node name="chip_presets" type="Node2D"]
+visible = false
+script = ExtResource("1_h40wb")
+
+[node name="Blank" parent="." instance=ExtResource("2_55ho3")]
+
+[node name="Study" parent="." instance=ExtResource("3_p6iju")]
+
+[node name="Mental Expansion" parent="." instance=ExtResource("4_psl5y")]

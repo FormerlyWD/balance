@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbdi6t10pxym"]
+
+[ext_resource type="Script" path="res://UI related stuff/shop_selector/shop_selector.gd" id="1_exeis"]
+[ext_resource type="Texture2D" uid="uid://b0cuivh7wopjt" path="res://art_folder/selector/block_selector/block_selector1.png" id="2_6rr0h"]
+[ext_resource type="Texture2D" uid="uid://bhd3qrsrckqqv" path="res://art_folder/selector/block_selector/block_selector2.png" id="3_jk8m2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nje6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6rr0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jk8m2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="shop_selector" type="Node2D"]
+script = ExtResource("1_exeis")
+
+[node name="blockslctanim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nje6u")

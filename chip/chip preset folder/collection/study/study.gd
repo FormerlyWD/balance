@@ -29,8 +29,14 @@ func chip_method():
 func chip_spawn(chip_index:Vector2i):
 	print("UBI")
 	if not neighbor_initiated:
+		print("HUH")
 		return
 	if chip_index in all_neighbors:
 		signalst.emit_signal("morale_addition",1)
+	print("-------------------")
+	print(chip_index)
+	print("---------")
+	print(all_neighbors[0]-Vector2i(1,0))
+	print("-------------------")
 func inverse_chip_method():
 	signalst.emit_signal("morale_subtraction",1)

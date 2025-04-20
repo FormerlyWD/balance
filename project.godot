@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="balance"
-run/main_scene="res://main/main_scene.tscn"
+run/main_scene="res://scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 select="*res://UI related stuff/selector/selectorglobal.gd"
 signalst="*res://globals/signalstation.gd"
+info="*res://globals/information_inventory.gd"
 
 [input]
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://p3vmbkofcbj8"]
+
+[ext_resource type="Script" path="res://UI related stuff/shop_squares.gd" id="1_2jexb"]
+[ext_resource type="Texture2D" uid="uid://dcsfpa53coe05" path="res://art_folder/chips/clip designs/border.png" id="1_760oy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4f8u7"]
+radius = 11.0
+
+[node name="shop_squares" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_2jexb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4f8u7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_760oy")

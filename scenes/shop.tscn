@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://lndvfx1ocf8j"]
+
+[ext_resource type="Script" path="res://scenes/shop.gd" id="1_n6doy"]
+[ext_resource type="PackedScene" uid="uid://oxmm4afsgkya" path="res://chip/chip_presets.tscn" id="2_ebw5x"]
+[ext_resource type="PackedScene" uid="uid://bs03vq7g3jqir" path="res://chip/chip_spawn.tscn" id="3_8pw1b"]
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_n6doy")
+
+[node name="chip_presets" parent="." instance=ExtResource("2_ebw5x")]
+unique_name_in_owner = true
+
+[node name="shop_spawn" parent="." instance=ExtResource("3_8pw1b")]
+unique_name_in_owner = true
+
+[node name="game_camera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://1si8y5yn2py"]
+
+[ext_resource type="Script" path="res://main/game_informatics/finding_value.gd" id="1_eu1in"]
+
+[node name="value_fetch" type="Node"]
+script = ExtResource("1_eu1in")

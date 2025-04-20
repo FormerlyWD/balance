@@ -1,0 +1,98 @@
+[gd_scene load_steps=14 format=3 uid="uid://d2vkvyomem7xt"]
+
+[ext_resource type="Script" path="res://main/game_camera.gd" id="1_7lc5c"]
+[ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_dn8nw"]
+[ext_resource type="Texture2D" uid="uid://cdbcawkfbh56x" path="res://art_folder/ui/numerals/Sprite-0002.png" id="2_e8ek7"]
+[ext_resource type="Script" path="res://main/equal_sign.gd" id="3_qefr8"]
+[ext_resource type="Texture2D" uid="uid://dx5ud7dec5fm1" path="res://art_folder/ui/numerals/sdf1.png" id="4_excr5"]
+[ext_resource type="FontFile" uid="uid://c2y6150ii5ppk" path="res://art_folder/ui/numerals/PixelifySans-VariableFont_wght.ttf" id="5_mdvhg"]
+[ext_resource type="Texture2D" uid="uid://dclhfjy3gykuc" path="res://art_folder/ui/numerals/sdf2.png" id="6_xamjh"]
+[ext_resource type="PackedScene" uid="uid://iula2jtepxtv" path="res://main/board_components/board.tscn" id="7_vms8x"]
+[ext_resource type="PackedScene" uid="uid://8pindllw3i6g" path="res://UI related stuff/selector/selector.tscn" id="8_7dljd"]
+[ext_resource type="PackedScene" uid="uid://bs03vq7g3jqir" path="res://chip/chip_spawn.tscn" id="9_5v84m"]
+[ext_resource type="PackedScene" uid="uid://oxmm4afsgkya" path="res://chip/chip_presets.tscn" id="10_jgkdb"]
+[ext_resource type="PackedScene" uid="uid://1si8y5yn2py" path="res://main/game_informatics/finding_value.tscn" id="11_mm4r5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bq7yy"]
+font = ExtResource("5_mdvhg")
+font_size = 368
+
+[node name="main_scene" type="Node2D"]
+script = ExtResource("1_dn8nw")
+
+[node name="game_camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+zoom = Vector2(2, 2)
+script = ExtResource("1_7lc5c")
+
+[node name="operands" type="Sprite2D" parent="game_camera"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0, -146)
+scale = Vector2(2, 2)
+texture = ExtResource("2_e8ek7")
+script = ExtResource("3_qefr8")
+
+[node name="positive morale" type="Sprite2D" parent="game_camera/operands"]
+texture_filter = 1
+position = Vector2(-18.75, 0)
+texture = ExtResource("4_excr5")
+
+[node name="pos_counter" type="Label" parent="game_camera/operands/positive morale"]
+unique_name_in_owner = true
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -0.875
+anchor_top = 0.03125
+anchor_right = 38.4375
+anchor_bottom = 0.03125
+offset_left = -5.0
+offset_top = -10.5
+offset_right = 211.0
+offset_bottom = 432.5
+scale = Vector2(0.045, 0.045)
+text = "0"
+label_settings = SubResource("LabelSettings_bq7yy")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="negative morale" type="Sprite2D" parent="game_camera/operands"]
+texture_filter = 1
+position = Vector2(18.75, 0)
+texture = ExtResource("6_xamjh")
+
+[node name="neg_counter" type="Label" parent="game_camera/operands/negative morale"]
+unique_name_in_owner = true
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -1.26563
+anchor_top = 0.03125
+anchor_right = 39.0469
+anchor_bottom = 0.03125
+offset_left = 1.25
+offset_top = -11.5
+offset_right = 217.25
+offset_bottom = 431.5
+scale = Vector2(0.045, 0.045)
+text = "0"
+label_settings = SubResource("LabelSettings_bq7yy")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="board" parent="." instance=ExtResource("7_vms8x")]
+unique_name_in_owner = true
+position = Vector2(-87.465, 0)
+
+[node name="selector" parent="." instance=ExtResource("8_7dljd")]
+unique_name_in_owner = true
+
+[node name="chip_management" type="Node" parent="."]
+
+[node name="chip_spawn" parent="chip_management" instance=ExtResource("9_5v84m")]
+z_index = 3
+
+[node name="chip_presets" parent="chip_management" instance=ExtResource("10_jgkdb")]
+
+[node name="game_management" type="Node" parent="."]
+
+[node name="balance" parent="." instance=ExtResource("11_mm4r5")]

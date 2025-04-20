@@ -62,7 +62,6 @@ func instianciate_all_squares():
 				(-x_offset+(((x_count*square_px)*square_scale))),
 				(-y_offset+((y_count*square_px)*square_scale))
 			)
-			print(-x_offset+x_count*square_px*square_scale)
 			var dimention:Vector2i = Vector2i(
 				x_count,
 				y_count
@@ -79,17 +78,18 @@ func instianciate_all_squares():
 func create_new_squares(new_resolution:Vector2i, orientation_transition_type:String):
 	pass
 	
-func update_all_sqr_position():
+func update_all_sqr_position(dimention_addition:Vector2i):
 	var old_x_offset:float = update_offset("x")
 	var old_y_offset:float = update_offset("y")
-	dimentions.x += 1
+	var old_dimention:Vector2i = dimentions
+	dimentions += dimention_addition
 	var x_offset:float = update_offset("x")
 	var y_offset:float = update_offset("y")
 	var new_tween:Tween = get_tree().create_tween()
 	var reload_type:bool = true
-	new_tween.tween_property(self,"position",Vector2((old_x_offset-x_offset)+position.x, (old_y_offset-y_offset)+position.y),1).set_trans(Tween.TRANS_ELASTIC)
-	var y_count:int = 0
-	
+	new_tween.tween_property(self,"position",Vector2((old_x_offset-x_offset)+position.x, (y_offset-old_y_offset)+position.y),1).set_trans(Tween.TRANS_ELASTIC)
+
+
 	%board.currently_shifting = true
 	%selector.visible = false
 	%selector.is_disabled = true
@@ -99,16 +99,56 @@ func update_all_sqr_position():
 	%selector.is_disabled = false
 	%board.currently_shifting = false
 	
-	for new_squares in dimentions.y:
-		var dimention:Vector2i = Vector2i(dimentions.x-1, y_count)
-		var sqr_position:Vector2 = Vector2(
-			-x_offset+(((dimentions.x-1)*square_px)*square_scale),
-			-y_offset+((y_count*square_px)*square_scale)
-		)
-		instanciate_square(dimention,sqr_position)
-		board_color_toggle = not board_color_toggle
-		y_count +=1
-		
+	
+	if dimentions.x - old_dimention.x > 0:
+		var x_row:int = 0
+		var y_count:int  = 0
+		if old_dimention.x % 2 ==0:
+			reload_type = true
+			board_color_toggle = true
+		else:
+			reload_type = false
+			board_color_toggle = false
+		for all_rows in dimention_addition.x:
+			for all_squares in dimentions.y:
+				var dimention:Vector2i = Vector2i(
+					old_dimention.x+x_row,
+					y_count
+				)
+				var sqr_position:Vector2 = Vector2(
+					-x_offset+((old_dimention.x+x_row)*square_px*square_scale),
+					-y_offset+((y_count)*square_px*square_scale)
+				)
+				y_count += 1
+				instanciate_square(dimention,sqr_position)
+				board_color_toggle = not board_color_toggle
+
+			y_count = 0
+			x_row +=1
+			
+	if dimentions.y - old_dimention.y > 0:
+		var y_row:int = 0
+		var x_count:int  = 0
+		if old_dimention.y % 2 ==0:
+			board_color_toggle = true
+		else:
+			board_color_toggle = false
+		for all_rows in dimention_addition.y:
+			for all_squares in dimentions.x:
+				var dimention:Vector2i = Vector2i(
+					x_count,
+					old_dimention.y+y_row
+				)
+				var sqr_position:Vector2 = Vector2(
+					-x_offset+((x_count)*square_px*square_scale),
+					-y_offset+(0*square_px*square_scale)
+				)
+				x_count += 1
+				instanciate_square(dimention,sqr_position)
+				board_color_toggle = not board_color_toggle
+
+			x_count = 0
+			y_row +=1
 func _ready() -> void:
 	instianciate_all_squares()
 	var reorder_dim:Callable = Callable(self, "update_all_sqr_position")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuypl8txbdl7l"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/depression/depression.gd" id="1_qswxl"]
+[ext_resource type="Texture2D" uid="uid://cxhfsovt2cs2i" path="res://art_folder/chips/logos/depression.png" id="2_dldp5"]
+
+[node name="Depression" type="Node2D"]
+script = ExtResource("1_qswxl")
+rarity = "extremely rare"
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_dldp5")

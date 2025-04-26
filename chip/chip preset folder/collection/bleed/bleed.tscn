@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjhq5okguf5x4"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/bleed/bleed.gd" id="1_b2qmy"]
+[ext_resource type="Texture2D" uid="uid://ydldlqppdwco" path="res://art_folder/chips/logos/bleed.png" id="2_ds0s1"]
+
+[node name="Blank" type="Node2D"]
+script = ExtResource("1_b2qmy")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ds0s1")

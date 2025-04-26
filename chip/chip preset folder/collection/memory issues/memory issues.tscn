@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu6s42vqdodj"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/memory issues/memory_issues.gd" id="1_s2ti3"]
+[ext_resource type="Texture2D" uid="uid://c18wswmkrst62" path="res://art_folder/chips/logos/confused.png" id="2_son8x"]
+
+[node name="Confused" type="Node2D"]
+script = ExtResource("1_s2ti3")
+rarity = "uncommon"
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_son8x")

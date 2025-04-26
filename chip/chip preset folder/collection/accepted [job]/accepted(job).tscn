@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b16m33u3uxf8h"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/accepted [job]/accepted(job).gd" id="1_a4hsp"]
+[ext_resource type="Texture2D" uid="uid://cwi848176ckca" path="res://art_folder/chips/logos/newlogo3.png" id="2_fcgxx"]
+
+[node name="Accepted(job)" type="Node2D"]
+script = ExtResource("1_a4hsp")
+blocked_actions = Array[String](["buy"])
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_fcgxx")

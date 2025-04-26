@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcgm4tclmqjd1"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/unordered_chip.gd" id="1_bmkay"]
+[ext_resource type="Texture2D" uid="uid://domt1770jt1bh" path="res://art_folder/chips/logos/sadge.png" id="2_icpg0"]
+
+[node name="Sadness" type="Node2D"]
+script = ExtResource("1_bmkay")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_icpg0")

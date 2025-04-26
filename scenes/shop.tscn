@@ -1,17 +1,360 @@
-[gd_scene load_steps=4 format=3 uid="uid://lndvfx1ocf8j"]
+[gd_scene load_steps=37 format=3 uid="uid://lndvfx1ocf8j"]
 
 [ext_resource type="Script" path="res://scenes/shop.gd" id="1_n6doy"]
 [ext_resource type="PackedScene" uid="uid://oxmm4afsgkya" path="res://chip/chip_presets.tscn" id="2_ebw5x"]
 [ext_resource type="PackedScene" uid="uid://bs03vq7g3jqir" path="res://chip/chip_spawn.tscn" id="3_8pw1b"]
+[ext_resource type="Script" path="res://scenes/library_set.gd" id="3_pqgms"]
+[ext_resource type="PackedScene" uid="uid://cbdi6t10pxym" path="res://UI related stuff/shop_selector/shop_selector.tscn" id="4_s32xd"]
+[ext_resource type="Script" path="res://scenes/game_camera.gd" id="5_jq3ul"]
+[ext_resource type="Script" path="res://scenes/exit_shop.gd" id="5_s0iir"]
+[ext_resource type="FontFile" uid="uid://c2y6150ii5ppk" path="res://art_folder/ui/numerals/PixelifySans-VariableFont_wght.ttf" id="6_jhd40"]
+[ext_resource type="Script" path="res://scenes/deck_view.gd" id="7_xp86v"]
+[ext_resource type="PackedScene" uid="uid://b513g3bd4h7o0" path="res://UI related stuff/descriptioner/descripter.tscn" id="8_vdqdr"]
+[ext_resource type="PackedScene" uid="uid://hy0tks42hqeg" path="res://dilemmas/dillema_square.tscn" id="9_vadqv"]
+[ext_resource type="Script" path="res://scenes/backshop_view.gd" id="10_dj0pd"]
+[ext_resource type="PackedScene" uid="uid://d16ru6n13nsdq" path="res://UI related stuff/inventory/inventory.tscn" id="10_hpemm"]
+[ext_resource type="Script" path="res://scenes/currency_view.gd" id="11_08gra"]
+[ext_resource type="Texture2D" uid="uid://dnihb8o7vnm0o" path="res://art_folder/ui/grabber.png" id="13_4gjdf"]
+[ext_resource type="Script" path="res://scenes/v_slider.gd" id="14_kryc2"]
+[ext_resource type="Texture2D" uid="uid://ctq8e7ugw2b2k" path="res://art_folder/dilemmas/logos/job.png" id="14_nn5uc"]
+[ext_resource type="Texture2D" uid="uid://b1uj1v4ggd65" path="res://art_folder/chips/logos/work(project).png" id="15_5tvl4"]
+[ext_resource type="Script" path="res://dilemmas/ee.gd" id="15_vl7b8"]
+[ext_resource type="Script" path="res://dilemmas/dilema2.gd" id="16_y7mq6"]
+[ext_resource type="PackedScene" uid="uid://bjbur5323uj47" path="res://UI related stuff/currency_show/all_currency.tscn" id="17_xkhtq"]
+[ext_resource type="Script" path="res://dilemmas/2as.gd" id="18_ity0m"]
+[ext_resource type="Texture2D" uid="uid://bcnqs12p16jah" path="res://art_folder/chips/logos/hardcore.png" id="19_vsdku"]
+[ext_resource type="AudioStream" uid="uid://jdadic4j3o67" path="res://sounds/mouse-click-331781.mp3" id="24_t5kv7"]
+[ext_resource type="AudioStream" uid="uid://nxvx4ksimgax" path="res://sounds/error-4-199275.mp3" id="25_y83qs"]
+[ext_resource type="AudioStream" uid="uid://ro0vncv3omds" path="res://sounds/cinematic-boom-6872.mp3" id="26_p2s8i"]
+[ext_resource type="AudioStream" uid="uid://b0kp4ywkrsmni" path="res://sounds/switch-150130.mp3" id="27_fvac6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yiswy"]
+font = ExtResource("6_jhd40")
+font_size = 4411
+outline_color = Color(0.25098, 0.207843, 0.470588, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ecgo"]
+size = Vector2(13335.8, 4977.78)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bad1b"]
+font = ExtResource("6_jhd40")
+font_size = 736
+outline_size = 465
+outline_color = Color(0.85098, 0.235294, 0.941176, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fspo4"]
+size = Vector2(1763.29, 957.481)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xmy6t"]
+font = ExtResource("6_jhd40")
+font_size = 736
+outline_size = 465
+outline_color = Color(0.85098, 0.235294, 0.941176, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgkbm"]
+size = Vector2(4391.3, 1251.68)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbtr8"]
+border_color = Color(0.501961, 0.501961, 0.501961, 1)
+expand_margin_left = 2.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1je5i"]
+font = ExtResource("6_jhd40")
+font_size = 4411
+outline_color = Color(0.25098, 0.207843, 0.470588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3alry"]
+font = ExtResource("6_jhd40")
+font_size = 368
+outline_size = 1205
+outline_color = Color(0.85098, 0.235294, 0.941176, 1)
 
 [node name="shop" type="Node2D"]
 script = ExtResource("1_n6doy")
 
+[node name="library_set" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_pqgms")
+
 [node name="chip_presets" parent="." instance=ExtResource("2_ebw5x")]
 unique_name_in_owner = true
+position = Vector2(-20.76, 0)
 
 [node name="shop_spawn" parent="." instance=ExtResource("3_8pw1b")]
 unique_name_in_owner = true
 
 [node name="game_camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
 zoom = Vector2(2, 2)
+script = ExtResource("5_jq3ul")
+
+[node name="shop_selector" parent="." instance=ExtResource("4_s32xd")]
+unique_name_in_owner = true
+
+[node name="buttons" type="Node" parent="."]
+
+[node name="deck" type="Label" parent="buttons"]
+unique_name_in_owner = true
+offset_left = -158.0
+offset_top = 16.0
+offset_right = 12652.0
+offset_bottom = 5349.0
+scale = Vector2(0.004, 0.004)
+text = "deck>"
+label_settings = SubResource("LabelSettings_yiswy")
+
+[node name="deck_view" type="Area2D" parent="buttons/deck"]
+script = ExtResource("7_xp86v")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/deck/deck_view"]
+position = Vector2(6582.08, 2511.11)
+shape = SubResource("RectangleShape2D_6ecgo")
+
+[node name="exit" type="Label" parent="buttons"]
+unique_name_in_owner = true
+texture_filter = 1
+anchors_preset = -1
+anchor_top = 0.03125
+anchor_bottom = 0.03125
+offset_left = 185.39
+offset_top = 26.62
+offset_right = 1687.39
+offset_bottom = 911.62
+scale = Vector2(0.023, 0.023)
+text = "exit"
+label_settings = SubResource("LabelSettings_bad1b")
+horizontal_alignment = 1
+
+[node name="exit_shop" type="Area2D" parent="buttons/exit"]
+z_index = 2
+script = ExtResource("5_s0iir")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/exit/exit_shop"]
+position = Vector2(770.532, 434.294)
+shape = SubResource("RectangleShape2D_fspo4")
+metadata/_edit_lock_ = true
+
+[node name="back_shop" type="Label" parent="buttons"]
+offset_left = 315.0
+offset_top = 14.0
+offset_right = 2328.0
+offset_bottom = 457.0
+scale = Vector2(0.023, 0.023)
+text = "<back shop"
+label_settings = SubResource("LabelSettings_xmy6t")
+
+[node name="backshop_view" type="Area2D" parent="buttons/back_shop"]
+z_index = 2
+script = ExtResource("10_dj0pd")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/back_shop/backshop_view"]
+position = Vector2(1965.54, 461.361)
+shape = SubResource("RectangleShape2D_tgkbm")
+metadata/_edit_lock_ = true
+
+[node name="Cur" type="Label" parent="buttons"]
+unique_name_in_owner = true
+offset_left = -231.0
+offset_top = 16.0
+offset_right = 838.0
+offset_bottom = 518.0
+scale = Vector2(0.004, 0.004)
+text = "<Cur"
+label_settings = SubResource("LabelSettings_yiswy")
+
+[node name="currency_view" type="Area2D" parent="buttons/Cur"]
+script = ExtResource("11_08gra")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/Cur/currency_view"]
+position = Vector2(4000, 2500)
+shape = SubResource("RectangleShape2D_6ecgo")
+
+[node name="back_shop2" type="Label" parent="buttons"]
+offset_left = -396.0
+offset_top = 17.0
+offset_right = 1617.0
+offset_bottom = 460.0
+scale = Vector2(0.023, 0.023)
+text = "back shop>"
+label_settings = SubResource("LabelSettings_xmy6t")
+
+[node name="backshop_view" type="Area2D" parent="buttons/back_shop2"]
+z_index = 2
+script = ExtResource("10_dj0pd")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buttons/back_shop2/backshop_view"]
+position = Vector2(1891.3, 287.202)
+shape = SubResource("RectangleShape2D_tgkbm")
+metadata/_edit_lock_ = true
+
+[node name="descripter" parent="." instance=ExtResource("8_vdqdr")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-75, 82)
+metadata/_edit_lock_ = true
+
+[node name="dilemmas" type="Node2D" parent="."]
+
+[node name="dillema_square" parent="dilemmas" instance=ExtResource("9_vadqv")]
+position = Vector2(-147, -31)
+scale = Vector2(2, 2)
+logo = ExtResource("14_nn5uc")
+dilemma_name = "Apply for a job"
+description = "30+(Exp)% chance get accepted. Gives permanant Cash-generating chips  "
+
+[node name="dillema_square2" parent="dilemmas" instance=ExtResource("9_vadqv")]
+position = Vector2(-147, -72)
+scale = Vector2(2, 2)
+script = ExtResource("15_vl7b8")
+dilemma_name = "Independent work"
+description = "+3 work(project)"
+dillema_script = null
+
+[node name="dillema_square3" parent="dilemmas" instance=ExtResource("9_vadqv")]
+position = Vector2(-187, -31)
+scale = Vector2(2, 2)
+script = ExtResource("16_y7mq6")
+logo = ExtResource("15_5tvl4")
+dilemma_name = "specialize day"
+description = "costs 30 cash. Next day, you cant get new negative chips "
+dillema_script = null
+
+[node name="dillema_square4" parent="dilemmas" instance=ExtResource("9_vadqv")]
+position = Vector2(-187, -72)
+scale = Vector2(2, 2)
+script = ExtResource("18_ity0m")
+logo = ExtResource("19_vsdku")
+dilemma_name = "\"hardcore\"ize your day "
+description = "triple your morale and double board size for the next day"
+dillema_script = null
+
+[node name="inventory_management" type="Node2D" parent="."]
+
+[node name="inventory_slider" type="VSlider" parent="inventory_management"]
+unique_name_in_owner = true
+texture_filter = 1
+offset_left = 723.0
+offset_top = -76.0
+offset_right = 739.0
+offset_bottom = -49.0
+scale = Vector2(5, 5)
+theme_override_icons/grabber = ExtResource("13_4gjdf")
+theme_override_icons/grabber_highlight = ExtResource("13_4gjdf")
+theme_override_styles/slider = SubResource("StyleBoxFlat_nbtr8")
+value = 100.0
+script = ExtResource("14_kryc2")
+
+[node name="inventory" parent="inventory_management" instance=ExtResource("10_hpemm")]
+unique_name_in_owner = true
+position = Vector2(526, 41.646)
+scale = Vector2(2, 2)
+
+[node name="modifier_applicant" type="ColorRect" parent="."]
+offset_left = -975.0
+offset_top = 42.0
+offset_right = 1021.0
+offset_bottom = 135.0
+mouse_filter = 2
+color = Color(0.423529, 0.160784, 0.25098, 1)
+
+[node name="dillema\'" type="ColorRect" parent="modifier_applicant"]
+z_index = -3
+layout_mode = 0
+offset_left = 734.0
+offset_top = -190.0
+offset_right = 889.0
+offset_bottom = 186.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="undeck2" type="Label" parent="modifier_applicant"]
+layout_mode = 0
+offset_left = 742.96
+offset_top = -173.0
+offset_right = 34982.0
+offset_bottom = 5160.0
+scale = Vector2(0.004, 0.004)
+text = "DILLEMAS-------#"
+label_settings = SubResource("LabelSettings_1je5i")
+clip_text = true
+
+[node name="undeck3" type="Label" parent="modifier_applicant"]
+layout_mode = 0
+offset_left = 894.0
+offset_top = -173.0
+offset_right = 80894.0
+offset_bottom = 5160.0
+scale = Vector2(0.004, 0.004)
+text = "BUY A CHIP HERE------------------------------#"
+label_settings = SubResource("LabelSettings_yiswy")
+clip_text = true
+
+[node name="price" type="Label" parent="modifier_applicant"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1103.0
+offset_top = 56.0
+offset_right = 4578.0
+offset_bottom = 1124.0
+scale = Vector2(0.04, 0.04)
+text = "sdsdsfsdf"
+label_settings = SubResource("LabelSettings_3alry")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="currency_preview" parent="." instance=ExtResource("17_xkhtq")]
+unique_name_in_owner = true
+position = Vector2(-705.67, -93)
+offset = Vector2(-35.925, 0)
+
+[node name="sounds" type="Node" parent="."]
+
+[node name="clicksound" type="AudioStreamPlayer" parent="sounds"]
+unique_name_in_owner = true
+stream = ExtResource("24_t5kv7")
+
+[node name="errorsound" type="AudioStreamPlayer" parent="sounds"]
+unique_name_in_owner = true
+stream = ExtResource("25_y83qs")
+
+[node name="burstsound" type="AudioStreamPlayer" parent="sounds"]
+unique_name_in_owner = true
+stream = ExtResource("26_p2s8i")
+
+[node name="switchsound" type="AudioStreamPlayer" parent="sounds"]
+unique_name_in_owner = true
+stream = ExtResource("27_fvac6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -110
+offset_left = -6537.0
+offset_top = -543.0
+offset_right = 3362.0
+offset_bottom = 406.0
+mouse_filter = 2
+color = Color(0.25098, 0.294118, 0.027451, 1)
+
+[connection signal="mouse_entered" from="buttons/deck/deck_view" to="buttons/deck/deck_view" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttons/deck/deck_view" to="buttons/deck/deck_view" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="buttons/exit/exit_shop" to="buttons/exit/exit_shop" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttons/exit/exit_shop" to="buttons/exit/exit_shop" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="buttons/back_shop/backshop_view" to="buttons/back_shop/backshop_view" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttons/back_shop/backshop_view" to="buttons/back_shop/backshop_view" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="buttons/Cur/currency_view" to="buttons/Cur/currency_view" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttons/Cur/currency_view" to="buttons/Cur/currency_view" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="buttons/back_shop2/backshop_view" to="buttons/back_shop2/backshop_view" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="buttons/back_shop2/backshop_view" to="buttons/back_shop2/backshop_view" method="_on_mouse_exited"]
+[connection signal="changed" from="inventory_management/inventory_slider" to="inventory_management/inventory_slider" method="_on_changed"]
+[connection signal="drag_started" from="inventory_management/inventory_slider" to="inventory_management/inventory_slider" method="_on_drag_started"]
+[connection signal="value_changed" from="inventory_management/inventory_slider" to="inventory_management/inventory_slider" method="_on_value_changed"]
+
+[editable path="descripter"]

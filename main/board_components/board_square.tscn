@@ -1,17 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://2au1xbqadq5g"]
+[gd_scene load_steps=7 format=3 uid="uid://2au1xbqadq5g"]
 
 [ext_resource type="Texture2D" uid="uid://7vbbb2egnt0t" path="res://art_folder/board/Sprite-0003.png" id="1_ckxir"]
+[ext_resource type="Script" path="res://main/board_components/board_square.gd" id="1_cu5uo"]
 [ext_resource type="Script" path="res://main/board_components/sqr_select.gd" id="2_bctpr"]
+[ext_resource type="AudioStream" uid="uid://8gr1yukp36dh" path="res://sounds/sdfasffsrumble.wav" id="3_gce4g"]
+
+[sub_resource type="Curve" id="Curve_uy2pf"]
+_data = [Vector2(0.0196629, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7i0n"]
 size = Vector2(15.5, 15.5)
 
 [node name="board_square_1" type="Node2D"]
-scale = Vector2(2, 2)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_cu5uo")
 
 [node name="square_sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_ckxir")
+
+[node name="emit" type="CPUParticles2D" parent="square_sprite"]
+scale = Vector2(8, 8)
+emitting = false
+amount = 80
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.05
+spread = 180.0
+gravity = Vector2(0, 500)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_uy2pf")
+
+[node name="earth_sound" type="AudioStreamPlayer" parent="square_sprite"]
+stream = ExtResource("3_gce4g")
+volume_db = -22.395
 
 [node name="sqr_select" type="Area2D" parent="."]
 script = ExtResource("2_bctpr")
@@ -19,5 +46,6 @@ script = ExtResource("2_bctpr")
 [node name="select_area" type="CollisionShape2D" parent="sqr_select"]
 shape = SubResource("RectangleShape2D_m7i0n")
 
+[connection signal="finished" from="square_sprite/emit" to="." method="_on_emit_finished"]
 [connection signal="mouse_entered" from="sqr_select" to="sqr_select" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="sqr_select" to="sqr_select" method="_on_mouse_exited"]

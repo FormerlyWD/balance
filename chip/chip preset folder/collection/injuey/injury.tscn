@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmyuodr6e2y5v"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/injuey/injury.gd" id="1_4owb6"]
+[ext_resource type="Texture2D" uid="uid://oj7rbj1uvm6x" path="res://art_folder/chips/logos/injured.png" id="2_xytxh"]
+
+[node name="Injury" type="Node2D"]
+script = ExtResource("1_4owb6")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_xytxh")

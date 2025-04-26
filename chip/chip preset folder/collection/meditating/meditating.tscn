@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnqum3fdv1cg"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/meditating/meditating.gd" id="1_rsbsr"]
+[ext_resource type="Texture2D" uid="uid://bcb5xx7670dvq" path="res://art_folder/chips/logos/meditate.png" id="2_he0ia"]
+
+[node name="Meditating" type="Node2D"]
+script = ExtResource("1_rsbsr")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_he0ia")

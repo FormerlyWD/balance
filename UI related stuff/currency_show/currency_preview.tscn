@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm5bal34lqxll"]
+
+[ext_resource type="Texture2D" uid="uid://b4no3oe8qc03o" path="res://art_folder/ui/Sprite-0003.png" id="1_5d0at"]
+[ext_resource type="Script" path="res://UI related stuff/currency_show/currency_preview.gd" id="1_cug7g"]
+[ext_resource type="FontFile" uid="uid://c2y6150ii5ppk" path="res://art_folder/ui/numerals/PixelifySans-VariableFont_wght.ttf" id="3_e1rjf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ac77d"]
+font = ExtResource("3_e1rjf")
+font_size = 368
+outline_size = 95
+outline_color = Color(0.14902, 0.592157, 0.941176, 1)
+
+[node name="currency_preview" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_cug7g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_5d0at")
+
+[node name="name" type="Label" parent="."]
+offset_left = -74.0
+offset_top = -16.0
+offset_right = 4859.0
+offset_bottom = 484.0
+scale = Vector2(0.03, 0.03)
+text = "Morale"
+label_settings = SubResource("LabelSettings_ac77d")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="value" type="Label" parent="."]
+offset_left = -74.0
+offset_top = 1.0
+offset_right = 4859.0
+offset_bottom = 501.0
+scale = Vector2(0.03, 0.03)
+text = "2"
+label_settings = SubResource("LabelSettings_ac77d")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

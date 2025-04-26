@@ -1,19 +1,122 @@
-[gd_scene load_steps=6 format=3 uid="uid://oxmm4afsgkya"]
+[gd_scene load_steps=30 format=3 uid="uid://oxmm4afsgkya"]
 
 [ext_resource type="Script" path="res://chip/chip_presets.gd" id="1_h40wb"]
 [ext_resource type="PackedScene" uid="uid://ig8domqvsqu1" path="res://chip/chip preset folder/unordered_chip.tscn" id="2_55ho3"]
+[ext_resource type="PackedScene" uid="uid://b16m33u3uxf8h" path="res://chip/chip preset folder/collection/accepted [job]/accepted(job).tscn" id="2_ecs64"]
 [ext_resource type="PackedScene" uid="uid://corff2s4g4qv3" path="res://chip/chip preset folder/collection/study/study.tscn" id="3_p6iju"]
 [ext_resource type="PackedScene" uid="uid://blu235h80ckgi" path="res://chip/chip preset folder/collection/mental expansion/Mental Expansion.tscn" id="4_psl5y"]
-[ext_resource type="PackedScene" uid="uid://e72nm7gq0tlx" path="res://chip/chip preset folder/collection/sleep/sleep.tscn" id="5_lurt2"]
+[ext_resource type="PackedScene" uid="uid://dc6aas80t4p7b" path="res://chip/chip preset folder/collection/misunderstanding/misunderstanding.tscn" id="5_mc68k"]
+[ext_resource type="PackedScene" uid="uid://cjlwgim03iiva" path="res://chip/chip preset folder/collection/party/party.tscn" id="7_oa8wt"]
+[ext_resource type="PackedScene" uid="uid://dcgm4tclmqjd1" path="res://chip/chip preset folder/collection/Sadness/Sadness.tscn" id="8_pnghc"]
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/Sadness/sadness.gd" id="9_7ryfb"]
+[ext_resource type="PackedScene" uid="uid://blgh43gp3u3b5" path="res://chip/chip preset folder/collection/rejected [job]/rejected(job).tscn" id="10_ond2t"]
+[ext_resource type="PackedScene" uid="uid://bu6s42vqdodj" path="res://chip/chip preset folder/collection/memory issues/memory issues.tscn" id="11_m38dd"]
+[ext_resource type="PackedScene" uid="uid://e72nm7gq0tlx" path="res://chip/chip preset folder/collection/sleep/sleep.tscn" id="12_od48y"]
+[ext_resource type="PackedScene" uid="uid://cuypl8txbdl7l" path="res://chip/chip preset folder/collection/depression/depression.tscn" id="13_llfwg"]
+[ext_resource type="PackedScene" uid="uid://d4ds7mh6qlelp" path="res://chip/chip preset folder/collection/work_proj/work(project).tscn" id="14_buc32"]
+[ext_resource type="PackedScene" uid="uid://dpi73r8qs1gbh" path="res://chip/chip preset folder/collection/Headache/headache.tscn" id="15_qu8qi"]
+[ext_resource type="PackedScene" uid="uid://dylhg2bfkxlsw" path="res://chip/chip preset folder/collection/management/management.tscn" id="16_yyv4n"]
+[ext_resource type="PackedScene" uid="uid://bhu5kdu28vu50" path="res://chip/chip preset folder/collection/work(job)/work(job).tscn" id="17_fr1c0"]
+[ext_resource type="PackedScene" uid="uid://koiy254xj1uf" path="res://chip/chip preset folder/journaling/journaling.tscn" id="19_14rui"]
+[ext_resource type="PackedScene" uid="uid://c1vvv3o26fy3d" path="res://chip/chip preset folder/collection/regret/regret.tscn" id="19_vro3n"]
+[ext_resource type="PackedScene" uid="uid://c86tgfjrbfklv" path="res://chip/chip preset folder/collection/Therapy/Therapy.tscn" id="20_kl26h"]
+[ext_resource type="PackedScene" uid="uid://dkcxeo7x0nadn" path="res://chip/chip preset folder/collection/naive/naive.tscn" id="21_p5jve"]
+[ext_resource type="PackedScene" uid="uid://brpii7cet1ahw" path="res://chip/chip preset folder/collection/reward_yourself/reward yourself(scalable).tscn" id="22_j8dki"]
+[ext_resource type="PackedScene" uid="uid://cjftlkd530qpg" path="res://chip/chip preset folder/collection/trauma/trauma.tscn" id="23_wq4tp"]
+[ext_resource type="PackedScene" uid="uid://fd3tkjah8euj" path="res://chip/chip preset folder/collection/Happiness/happiness.tscn" id="24_arhyv"]
+[ext_resource type="PackedScene" uid="uid://dnqum3fdv1cg" path="res://chip/chip preset folder/collection/meditating/meditating.tscn" id="25_ljce8"]
+[ext_resource type="PackedScene" uid="uid://bmyuodr6e2y5v" path="res://chip/chip preset folder/collection/injuey/injury.tscn" id="26_2dpkj"]
+[ext_resource type="PackedScene" uid="uid://b5h76vfk88l8t" path="res://chip/chip preset folder/collection/investing/investing.tscn" id="27_8hbxc"]
+[ext_resource type="PackedScene" uid="uid://cco2u11e0n4kv" path="res://chip/chip preset folder/collection/working out/working out.tscn" id="28_c5uvs"]
+[ext_resource type="PackedScene" uid="uid://cjhq5okguf5x4" path="res://chip/chip preset folder/collection/bleed/bleed.tscn" id="29_amj4a"]
 
 [node name="chip_presets" type="Node2D"]
 visible = false
 script = ExtResource("1_h40wb")
 
+[node name="Accepted(job)" parent="." instance=ExtResource("2_ecs64")]
+position = Vector2(-180.227, 187.64)
+rarity = "uncommon"
+
 [node name="Blank" parent="." instance=ExtResource("2_55ho3")]
 
 [node name="Study" parent="." instance=ExtResource("3_p6iju")]
+rarity = "rare"
+buy_value_type = "Experience"
+buy_value = 20
 
 [node name="Mental Expansion" parent="." instance=ExtResource("4_psl5y")]
+rarity = "uncommon"
+buy_value = 20
 
-[node name="Sleep" parent="." instance=ExtResource("5_lurt2")]
+[node name="Misunderstanding" parent="." instance=ExtResource("5_mc68k")]
+rarity = "uncommon"
+buy_value = 2
+
+[node name="Party" parent="." instance=ExtResource("7_oa8wt")]
+buy_value_type = "Cash"
+buy_value = 60
+
+[node name="Sadness" parent="." instance=ExtResource("8_pnghc")]
+script = ExtResource("9_7ryfb")
+blocked_actions = Array[String](["buy", "sided"])
+
+[node name="Rejected(job)" parent="." instance=ExtResource("10_ond2t")]
+
+[node name="Confused" parent="." instance=ExtResource("11_m38dd")]
+buy_value = 5
+
+[node name="Sleep" parent="." instance=ExtResource("12_od48y")]
+buy_value = 5
+
+[node name="Depression" parent="." instance=ExtResource("13_llfwg")]
+
+[node name="Work(project)" parent="." instance=ExtResource("14_buc32")]
+
+[node name="Headache" parent="." instance=ExtResource("15_qu8qi")]
+rarity = "rare"
+
+[node name="Management" parent="." instance=ExtResource("16_yyv4n")]
+buy_value_type = "Cash"
+buy_value = 30
+
+[node name="Work(job)" parent="." instance=ExtResource("17_fr1c0")]
+rarity = "uncommon"
+
+[node name="Regret" parent="." instance=ExtResource("19_vro3n")]
+rarity = "uncommon"
+
+[node name="Journaling" parent="." instance=ExtResource("19_14rui")]
+rarity = "uncommon"
+buy_value = 5
+
+[node name="Therapy" parent="." instance=ExtResource("20_kl26h")]
+rarity = "rare"
+buy_value_type = "Cash"
+buy_value = 100
+
+[node name="Naive" parent="." instance=ExtResource("21_p5jve")]
+
+[node name="Reward yourself" parent="." instance=ExtResource("22_j8dki")]
+
+[node name="Trauma" parent="." instance=ExtResource("23_wq4tp")]
+rarity = "extremely rare"
+
+[node name="Happiness" parent="." instance=ExtResource("24_arhyv")]
+buy_value = 3
+
+[node name="Meditating" parent="." instance=ExtResource("25_ljce8")]
+rarity = "uncommon"
+buy_value = 24
+
+[node name="Injury" parent="." instance=ExtResource("26_2dpkj")]
+rarity = "rare"
+
+[node name="Investing" parent="." instance=ExtResource("27_8hbxc")]
+rarity = "uncommon"
+
+[node name="Working out" parent="." instance=ExtResource("28_c5uvs")]
+buy_value_type = "Cash"
+buy_value = 70
+
+[node name="Bleed" parent="." instance=ExtResource("29_amj4a")]

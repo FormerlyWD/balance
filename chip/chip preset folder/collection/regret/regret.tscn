@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1vvv3o26fy3d"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/regret/regret.gd" id="1_1jw1t"]
+[ext_resource type="Texture2D" uid="uid://dnawj0bd48lil" path="res://art_folder/chips/logos/regret.png" id="2_aymbw"]
+
+[node name="Blank" type="Node2D"]
+script = ExtResource("1_1jw1t")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_aymbw")

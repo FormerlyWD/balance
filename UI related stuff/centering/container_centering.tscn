@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuiakj1gop8tb"]
+
+[ext_resource type="Script" path="res://UI related stuff/centering/container_centering.gd" id="1_bqmlr"]
+
+[node name="container_centering" type="Node2D"]
+script = ExtResource("1_bqmlr")

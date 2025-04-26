@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://koiy254xj1uf"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/journaling/journaling.gd" id="1_wqpv6"]
+[ext_resource type="Texture2D" uid="uid://fp7qkleh1cux" path="res://art_folder/chips/logos/journal.png" id="2_ml1ku"]
+
+[node name="Journaling" type="Node2D"]
+script = ExtResource("1_wqpv6")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ml1ku")

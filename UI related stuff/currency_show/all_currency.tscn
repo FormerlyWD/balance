@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjbur5323uj47"]
+
+[ext_resource type="Script" path="res://UI related stuff/currency_show/all_currency.gd" id="1_brts5"]
+
+[node name="all_currency" type="Node2D"]
+script = ExtResource("1_brts5")

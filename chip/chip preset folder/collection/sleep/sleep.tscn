@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://e72nm7gq0tlx"]
 
 [ext_resource type="Script" path="res://chip/chip preset folder/collection/sleep/sleep.gd" id="1_hyrjo"]
-[ext_resource type="Texture2D" uid="uid://dn4sv80bwp38s" path="res://art_folder/chips/logos/Sprite-0005.png" id="2_6pxix"]
+[ext_resource type="Texture2D" uid="uid://eholn0lvu4t2" path="res://art_folder/chips/logos/sleep.png" id="2_fseot"]
 
-[node name="Blank" type="Node2D"]
+[node name="Sleep" type="Node2D"]
 script = ExtResource("1_hyrjo")
 
 [node name="logo" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_6pxix")
+texture = ExtResource("2_fseot")

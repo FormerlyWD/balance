@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3n28csrliwd7"]
+
+[ext_resource type="AudioStream" uid="uid://b2dhbx1rnlkxy" path="res://sounds/serenity-329278.mp3" id="1_3kqyu"]
+[ext_resource type="Script" path="res://sounds/audio_stream_player.gd" id="2_pkn0t"]
+
+[node name="music" type="AudioStreamPlayer"]
+stream = ExtResource("1_3kqyu")
+parameters/looping = true
+script = ExtResource("2_pkn0t")

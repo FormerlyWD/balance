@@ -19,7 +19,19 @@ config/icon="res://icon.svg"
 
 select="*res://UI related stuff/selector/selectorglobal.gd"
 signalst="*res://globals/signalstation.gd"
-info="*res://globals/information_inventory.gd"
+info="*res://main/game_informatics/information_inventory.gd"
+music="*res://sounds/audio_stream_player.tscn"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="viewport"
+
+[gui]
+
+theme/default_font_hinting=0
+theme/default_font_subpixel_positioning=0
 
 [input]
 
@@ -32,3 +44,5 @@ select={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/screen_space_roughness_limiter/enabled=false

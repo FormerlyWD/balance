@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgrnl24x2mfo1"]
+
+[ext_resource type="Texture2D" uid="uid://dlqh6fj5l38bu" path="res://art_folder/chips/logos/addict.png" id="2_hs24x"]
+
+[node name="Addicted" type="Node2D"]
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_hs24x")

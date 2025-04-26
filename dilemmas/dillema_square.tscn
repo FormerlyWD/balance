@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://hy0tks42hqeg"]
+
+[ext_resource type="Script" path="res://dilemmas/dillema_square.gd" id="1_lk71r"]
+[ext_resource type="Texture2D" uid="uid://dkq3343iv3iv5" path="res://art_folder/dilemmas/border/Sprite-0001.png" id="2_6nhw7"]
+[ext_resource type="Texture2D" uid="uid://u3vlscnbalww" path="res://art_folder/dilemmas/logos/independent work.png" id="2_uukfr"]
+[ext_resource type="Texture2D" uid="uid://dst4miwn73rbr" path="res://art_folder/dilemmas/clippers/Sprite-0001.png" id="3_b1ddn"]
+[ext_resource type="Script" path="res://dilemmas/string_storer.gd" id="3_wy150"]
+[ext_resource type="Texture2D" uid="uid://cpqsvtthlbyed" path="res://art_folder/dilemmas/rarity_colors/color1.png" id="4_mjwxk"]
+[ext_resource type="Texture2D" uid="uid://ctq8e7ugw2b2k" path="res://art_folder/dilemmas/logos/job.png" id="5_rho3m"]
+[ext_resource type="FontFile" uid="uid://c2y6150ii5ppk" path="res://art_folder/ui/numerals/PixelifySans-VariableFont_wght.ttf" id="6_2nwhg"]
+[ext_resource type="Script" path="res://dilemmas/detect.gd" id="8_x3wa0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_etjyv"]
+font = ExtResource("6_2nwhg")
+font_size = 368
+outline_size = 95
+outline_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuy7c"]
+size = Vector2(11.3137, 11.3137)
+
+[node name="dillema_square" type="Node2D"]
+script = ExtResource("1_lk71r")
+logo = ExtResource("2_uukfr")
+
+[node name="string_storer" type="Node2D" parent="."]
+script = ExtResource("3_wy150")
+
+[node name="border" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 0.00214977
+texture = ExtResource("2_6nhw7")
+
+[node name="background_clip" type="Sprite2D" parent="."]
+clip_children = 2
+texture_filter = 1
+texture = ExtResource("3_b1ddn")
+
+[node name="background_color" type="Sprite2D" parent="background_clip"]
+texture = ExtResource("4_mjwxk")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("5_rho3m")
+
+[node name="name" type="Label" parent="."]
+visible = false
+offset_left = 10.0
+offset_top = -7.0
+offset_right = 1828.0
+offset_bottom = 1266.0
+scale = Vector2(0.011, 0.011)
+label_settings = SubResource("LabelSettings_etjyv")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="detect" type="Area2D" parent="."]
+script = ExtResource("8_x3wa0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect"]
+position = Vector2(-1.19209e-07, 0)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_tuy7c")
+
+[connection signal="mouse_entered" from="detect" to="detect" method="_on_mouse_entered"]

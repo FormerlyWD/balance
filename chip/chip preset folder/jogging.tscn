@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cax5m5rsiuqv3"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/unordered_chip.gd" id="1_7o4t8"]
+[ext_resource type="Texture2D" uid="uid://bwe7teh3wqxh6" path="res://art_folder/chips/logos/newlogo1.png" id="2_wyclg"]
+
+[node name="Blank" type="Node2D"]
+script = ExtResource("1_7o4t8")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_wyclg")

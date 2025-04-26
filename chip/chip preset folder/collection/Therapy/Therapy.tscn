@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c86tgfjrbfklv"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/Therapy/therapy.gd" id="1_rnnq4"]
+[ext_resource type="Texture2D" uid="uid://dqx7gurrdr2jd" path="res://art_folder/chips/logos/therapy.png" id="2_xnf27"]
+
+[node name="Therapy" type="Node2D"]
+script = ExtResource("1_rnnq4")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_xnf27")

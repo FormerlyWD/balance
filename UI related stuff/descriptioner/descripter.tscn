@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b513g3bd4h7o0"]
+
+[ext_resource type="Script" path="res://UI related stuff/descriptioner/descripter.gd" id="1_p11w8"]
+[ext_resource type="FontFile" uid="uid://c2y6150ii5ppk" path="res://art_folder/ui/numerals/PixelifySans-VariableFont_wght.ttf" id="2_83l0n"]
+[ext_resource type="PackedScene" uid="uid://dgh5lybkp1lws" path="res://chip/sample_chip.tscn" id="3_3xs8k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uapo4"]
+font = ExtResource("2_83l0n")
+font_size = 368
+outline_size = 95
+outline_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[node name="descripter" type="Node2D"]
+script = ExtResource("1_p11w8")
+
+[node name="description" type="Label" parent="."]
+texture_filter = 1
+offset_top = -22.0
+offset_right = 5156.0
+offset_bottom = 1578.0
+scale = Vector2(0.045, 0.045)
+text = "Please select a Chip, or create one by pressing Left Click on an empty Square."
+label_settings = SubResource("LabelSettings_uapo4")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="chip" parent="." instance=ExtResource("3_3xs8k")]
+position = Vector2(-33, 12)
+scale = Vector2(4, 4)
+
+[node name="name" type="Label" parent="."]
+texture_filter = 1
+offset_left = -163.0
+offset_top = 3.0
+offset_right = 1687.0
+offset_bottom = 503.0
+scale = Vector2(0.04, 0.04)
+label_settings = SubResource("LabelSettings_uapo4")
+vertical_alignment = 1
+autowrap_mode = 2

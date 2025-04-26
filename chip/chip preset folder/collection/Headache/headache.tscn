@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpi73r8qs1gbh"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/Headache/headache.gd" id="1_cf8k3"]
+[ext_resource type="Texture2D" uid="uid://bwe7teh3wqxh6" path="res://art_folder/chips/logos/newlogo1.png" id="2_13e7k"]
+
+[node name="Headache" type="Node2D"]
+script = ExtResource("1_cf8k3")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_13e7k")

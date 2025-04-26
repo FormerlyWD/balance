@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cco2u11e0n4kv"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/working out/working_out.gd" id="1_hul5i"]
+[ext_resource type="Texture2D" uid="uid://cc2ranweoocki" path="res://art_folder/chips/logos/workingout.png" id="2_t1wix"]
+
+[node name="Working out" type="Node2D"]
+script = ExtResource("1_hul5i")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_t1wix")

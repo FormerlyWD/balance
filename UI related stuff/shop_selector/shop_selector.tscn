@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbdi6t10pxym"]
+[gd_scene load_steps=7 format=3 uid="uid://cbdi6t10pxym"]
 
 [ext_resource type="Script" path="res://UI related stuff/shop_selector/shop_selector.gd" id="1_exeis"]
 [ext_resource type="Texture2D" uid="uid://b0cuivh7wopjt" path="res://art_folder/selector/block_selector/block_selector1.png" id="2_6rr0h"]
 [ext_resource type="Texture2D" uid="uid://bhd3qrsrckqqv" path="res://art_folder/selector/block_selector/block_selector2.png" id="3_jk8m2"]
+[ext_resource type="Texture2D" uid="uid://dwmk338tcqolw" path="res://art_folder/selector/block_selector/failed_select1.png" id="4_alh5i"]
+[ext_resource type="Texture2D" uid="uid://cs1nafjwvbmed" path="res://art_folder/selector/block_selector/failed_select2.png" id="5_l45sp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nje6u"]
 animations = [{
@@ -16,12 +18,27 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_alh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l45sp")
+}],
+"loop": false,
+"name": &"red",
+"speed": 5.0
 }]
 
 [node name="shop_selector" type="Node2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_exeis")
 
 [node name="blockslctanim" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nje6u")
+animation = &"red"
+
+[connection signal="animation_looped" from="blockslctanim" to="." method="_on_blockslctanim_animation_looped"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4ds7mh6qlelp"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/work_proj/work(project).gd" id="1_x6skj"]
+[ext_resource type="Texture2D" uid="uid://u3vlscnbalww" path="res://art_folder/dilemmas/logos/independent work.png" id="2_dfh8d"]
+
+[node name="work(project)" type="Node2D"]
+script = ExtResource("1_x6skj")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_dfh8d")

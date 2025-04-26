@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkcxeo7x0nadn"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/naive/naive.gd" id="1_orb02"]
+[ext_resource type="Texture2D" uid="uid://buje41hmbsdl2" path="res://art_folder/chips/logos/naive.png" id="2_ojhql"]
+
+[node name="Naive" type="Node2D"]
+script = ExtResource("1_orb02")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_ojhql")

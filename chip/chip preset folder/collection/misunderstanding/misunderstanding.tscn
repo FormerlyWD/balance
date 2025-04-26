@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc6aas80t4p7b"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/misunderstanding/mental_expansion.gd" id="1_2rk5c"]
+[ext_resource type="Texture2D" uid="uid://brsc43n8hwmy8" path="res://art_folder/chips/logos/newlogo5.png" id="2_8ihvw"]
+
+[node name="Misunderstanding" type="Node2D"]
+script = ExtResource("1_2rk5c")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_8ihvw")

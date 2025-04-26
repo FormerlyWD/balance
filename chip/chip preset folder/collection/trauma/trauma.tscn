@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjftlkd530qpg"]
+
+[ext_resource type="Script" path="res://chip/chip preset folder/collection/trauma/trauma.gd" id="1_rsqkw"]
+[ext_resource type="Texture2D" uid="uid://1a71vbi5ix4m" path="res://art_folder/chips/logos/trauma.png" id="2_gwjpl"]
+
+[node name="Trauma" type="Node2D"]
+script = ExtResource("1_rsqkw")
+
+[node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_gwjpl")

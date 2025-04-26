@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://p3vmbkofcbj8"]
+[gd_scene load_steps=6 format=3 uid="uid://p3vmbkofcbj8"]
 
 [ext_resource type="Script" path="res://UI related stuff/shop_squares.gd" id="1_2jexb"]
 [ext_resource type="Texture2D" uid="uid://dcsfpa53coe05" path="res://art_folder/chips/clip designs/border.png" id="1_760oy"]
+[ext_resource type="FontFile" uid="uid://c2y6150ii5ppk" path="res://art_folder/ui/numerals/PixelifySans-VariableFont_wght.ttf" id="3_ei0b6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4f8u7"]
-radius = 11.0
+radius = 9.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ei5xa"]
+font = ExtResource("3_ei0b6")
+font_size = 368
 
 [node name="shop_squares" type="Node2D"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 script = ExtResource("1_2jexb")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -15,7 +20,23 @@ script = ExtResource("1_2jexb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_4f8u7")
 
+[node name="Label" type="Label" parent="Area2D"]
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.5
+anchor_right = 0.508
+anchor_bottom = 0.5
+offset_left = -8.33333
+offset_top = 10.3333
+offset_right = 1507.67
+offset_bottom = 453.333
+scale = Vector2(0.011, 0.011)
+label_settings = SubResource("LabelSettings_ei5xa")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_760oy")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

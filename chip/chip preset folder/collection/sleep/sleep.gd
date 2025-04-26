@@ -1,11 +1,45 @@
 extends Node2D
+@export_category("essentials")
+@export var rarity:String = "common"
+@onready var chip_name:String = name
+@export var chip_overide:bool = false
 
-@onready var chip_overide:bool = false
-@onready var rarity:String = "uncommon"
 @onready var logo:Texture = $logo.texture
-func chip_method():
-	var morale_container:int = 1
+
+@export_category("cans and dos")
+@export var blocked_actions:Array[String]
+@export var buff_value:int
+@onready var afterinstance_blocked_actions:Array[String]
+@export_category("buying")
+@export_enum( "Morale", "Cash")
+var buy_value_type:String = "Morale"
+@export var buy_value:int
+var description_structure:Array[String] = [
+	"+",
+	"value",
+	" Morale.",
+	" Ends the day.",
+	" Making this game deprives me of this chip."
+]
+var all_comps:Dictionary = {
+	"value": 1
+}
+var morale_container:int
+var chip_unique_name:String
+var one_shot:bool = true
+func chip_method(retrigger:bool = false)-> void:
 	var board:Node2D = get_parent().get_parent()
-	board.get_parent().get_node("balance").end_day_status()
-func inverse_chip_method():
-	pass
+	if one_shot:
+		chip_unique_name = name + str(board.board_occupation.keys().size())
+		one_shot = false
+	if blocked_actions.has("retrigger") or blocked_actions.has("late_recall")  or blocked_actions.has("action retrigger"):
+		if retrigger: return
+	var balance:Node = get_parent().get_parent().get_parent().get_node("balance")
+	signalst.emit_signal("morale_addition",all_comps["value"], chip_unique_name)
+	info.sleep_active = true
+	balance.end_day_status()
+	
+func inverse_chip_method(retrigger:bool = false)-> void:
+	if blocked_actions.has("retrigger") or blocked_actions.has("late_recall")  or blocked_actions.has("inverse action retrigger") :
+		if retrigger: return
+	signalst.emit_signal("remove_container", chip_unique_name)
